@@ -3,53 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T-Shirt Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Christian Dadap | Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920') center/cover;
+    }
+    
+    .dark .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+                  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920') center/cover;
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .dark .glass-effect {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
-<body>
-  <nav>
-    <a href="index.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+  
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter">cmd</div>
+        <div class="flex items-center space-x-8">
+          <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider">
+            <a href="#home" class="hover:text-gray-400 transition uppercase">Home</a>
+            <a href="#about" class="hover:text-gray-400 transition uppercase">About</a>
+            <a href="#projects" class="hover:text-gray-400 transition uppercase">Projects</a>
+            <a href="#skills" class="hover:text-gray-400 transition uppercase">Skills</a>
+            <a href="#contact" class="hover:text-gray-400 transition uppercase">Contact</a>
+          </div>
+          
+          <!-- Dark Mode Toggle -->
+          <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-white/20 transition">
+            <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <button class="md:hidden text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
   </nav>
 
-
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="subtitle">do you believe in divine intervention</p>
-      <h1>PRAY FOR US</h1>
-      <p class="tagline">SAINT | ICE | ICEROCKS</p>
-      <p class="year">2025</p>
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
+    <div class="text-center z-10 px-4 text-white">
+      <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-300 mb-4 animate-pulse">
+        Developer & DevOps Enthusiast
+      </p>
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-none">
+        cmd
+      </h1>
+      <p class="text-lg md:text-xl tracking-[0.3em] text-gray-200 mb-8">
+        Building | Learning | Growing
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+        <a href="#projects" class="px-8 py-4 bg-white text-black font-bold uppercase tracking-wider hover:bg-gray-200 transition transform hover:scale-105">
+          View My Work
+        </a>
+        <a href="#contact" class="px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wider hover:bg-white hover:text-black transition transform hover:scale-105">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
     </div>
   </section>
 
-   <!-- Products Section -->
-  <div class="products">
-    <div class="product">
-      <img src="images/tshirt1.jpg" alt="Classic White Tee" class="product-img">
-      <h3>Classic White Tee</h3>
-      <p>$25</p>
-      <a href="product.html"><button>View</button></a>
-    </div>
+  <!-- About Section -->
+  <section id="about" class="bg-white dark:bg-gray-900 py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">ABOUT ME</h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Passionate developer on a journey to master DevOps and cloud technologies
+        </p>
+      </div>
 
-    <div class="product">
-      <img src="images/tshirt1.jpg" alt="Black Tee" class="product-img">
-      <h3>Black Tee</h3>
-      <p>$25</p>
-      <a href="product2.html"><button>View</button></a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="w-full h-96 bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=800" 
+                 alt="Developer workspace" 
+                 class="w-full h-full object-cover">
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            Hi! I'm <span class="font-bold text-black dark:text-white">Christian Dadap</span>, a developer based in Makati City, Philippines. I'm currently on an exciting journey learning DevOps practices and cloud technologies.
+          </p>
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            I believe in continuous learning and hands-on practice. My approach is to build real projects while mastering new technologies - from containerization with Docker to orchestration with Kubernetes.
+          </p>
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            When I'm not coding, you'll find me exploring new tools, contributing to open source, or documenting my learning journey.
+          </p>
+          
+          <div class="flex gap-4 pt-4">
+            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="images/tshirt1.jpg" alt="Oversized White Tee" class="product-img">
-      <h3>Oversized White Tee</h3>
-      <p>$25</p>
-      <a href="product3.html"><button>View</button></a>
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-50 dark:bg-black py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">MY PROJECTS</h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Real-world applications I've built while learning and growing as a developer
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="group cursor-pointer bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-video">
+            <img src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?w=600" 
+                 alt="T-Shirt Shop" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">T-Shirt E-Commerce</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              A minimalist e-commerce website with Docker containerization and CI/CD pipeline
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">HTML</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Tailwind</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Docker</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-sm font-semibold hover:underline">View Demo →</a>
+              <a href="https://github.com/ChristianDadap/t-shirt-shop" class="text-sm font-semibold hover:underline">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group cursor-pointer bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-video">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" 
+                 alt="DevOps Dashboard" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">DevOps Dashboard</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Monitoring dashboard with Prometheus and Grafana for tracking application metrics
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">React</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Prometheus</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Grafana</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-sm font-semibold hover:underline">View Demo →</a>
+              <a href="#" class="text-sm font-semibold hover:underline">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group cursor-pointer bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-video">
+            <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600" 
+                 alt="Infrastructure as Code" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">AWS Infrastructure</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Automated AWS infrastructure deployment using Terraform and Ansible
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Terraform</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">Ansible</span>
+              <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-xs font-semibold rounded-full">AWS</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-sm font-semibold hover:underline">View Demo →</a>
+              <a href="#" class="text-sm font-semibold hover:underline">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Minimalist T-Shirts</p>
-  </footer>
-</body>
-</html>
+  <!-- Skills Section -->
+  <section id="skills" class="bg-white dark:bg-gray-900 py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">SKILLS & TOOLS</h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Technologies I'm learning and working with on my DevOps journey
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Development -->
+        <div class="p-8 bg-gray-50 dark:bg-black rounded-lg">
+          <div class="text-3xl mb-4">💻</div>
+          <h3 class="text-xl font-bold mb-4">Development</h3>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            <li>• HTML, CSS, JavaScript</li>
+            <li>• React & Tailwind CSS</li>
+            <li>• Git & GitHub</li>
+            <li>• RESTful APIs</li>
+          </ul>
+        </div>
+
+        <!-- DevOps -->
+        <div class="p-8 bg-gray-50 dark:bg-black rounded-lg">
+          <div class="text-3xl mb-4">🚀</div>
+          <h3 class="text-xl font-bold mb-4">DevOps & Cloud</h3>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            <li>• Docker & Docker Compose</li>
+            <li>• CI/CD (GitHub Actions)</li>
+            <li>• AWS (EC2, S3, Route53)</li>
+            <li>• Terraform & Ansible</li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="p-8 bg-gray-50 dark:bg-black rounded-lg">
+          <div class="text-3xl mb-4">📚</div>
+          <h3 class="text-xl font-bold mb-4">Currently Learning</h3>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            <li>• Kubernetes & Helm</li>
+            <li>• Prometheus & Grafana</li>
+            <li>• Jenkins & ArgoCD</li>
+            <li>• Security Best Practices</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-50 dark:bg-black py-20 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">GET IN TOUCH</h2>
+        <p class="text-gray-600 dark:text-gray-400">
+          Have a project in mind or want to collaborate? Let's talk!
+        </p>
+      </div>
+
+      <form class="space-y-6">
+        <div>
+          <input type="text" placeholder="Your Name" required
+                 class="w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:border-gray-600 dark:focus:border-gray-400 transition rounded-lg">
+        </div>
+        <div>
+          <input type="email" placeholder="Your Email" required
+                 class="w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:border-gray-600 dark:focus:border-gray-400 transition rounded-lg">
+        </div>
+        <div>
+          <textarea rows="6" placeholder="Your Message" required
+                    class="w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:border-gray-600 dark:focus:border-gray-400 transition resize-none rounded-lg"></textarea>
+        </div>
+        <button type="submit" 
+                class="w-full bg-black dark:bg-white text-white dark:text-black py-4 font-bold uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition transform hover:scale-[1.02] rounded-lg">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0 text-center md:text-left">
+          <div class="text-2xl font-black tracking-tighter mb-2">CHRISTIAN DADAP</div>
+          <p class="text-gray-500 text-sm">Developer | DevOps Enthusiast | Continuous Learner</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-black dark:hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-black dark:hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-black dark:hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958
