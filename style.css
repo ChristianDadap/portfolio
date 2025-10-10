@@ -1,9 +1,9 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-font-family: "Courier New", Courier, "Lucida Console", Monaco, monospace;
+font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 color: white;
-background: #2596be;
+background: #000000;
 text-align: center;
 font-weight: 700; /* Bold by default */
 }
@@ -13,7 +13,7 @@ background: #fff; /* white background */
 padding: 20px 0;
 border-bottom: 1px solid #eee; /* subtle line */
 text-align: center;
-font-family: "Courier New", Courier, "Lucida Console", Monaco, monospace;
+font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 nav a {
 margin: 0 20px;
@@ -80,7 +80,7 @@ position: relative;
 z-index: 1;
 color: white;
 text-align: center;
-font-family: "Courier New", Courier, "Lucida Console", Monaco, monospace;
+font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .hero-content .subtitle {
 font-size: 1rem;
