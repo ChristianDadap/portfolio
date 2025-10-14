@@ -107,6 +107,5 @@ jobs:
     - name: Deployment success
       run: |
         echo "🎉 Deployment successful!"
-        echo "🌐 Your site is live at: https://chr
-istiandadap.github.io/portfolio/"
+        echo "🌐 Your site is live at: https://christiandadap.github.io/portfolio/"
         echo "✅ All jobs completed successfully!"
